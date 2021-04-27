@@ -1,15 +1,16 @@
 class Box{
-    constructor(x,y)
+    constructor(x,y,width,height){
+        this.body = Matter.Bodies.rectangle(x,y,width,height);
+        Matter.World.add(world,this.body);
+        this.width = width;
+        this.height = height;
+    }
+    display(){
+        rectMode(CENTER);
+        rect(this.body.position.x,this.body.position.y,this.width,this.height);
+    }
 }
 
 
-block1=new Block(330,235,30,40);
-block2=new Block(360,235,30,40);
-block3=new Block(390,235,30,40);
-block4=new Block(420,235,30,40);  
-block5=new Block(450,235,30,40);
-block6=new Block(360,195,30,40);
-block7=new Block(390,195,30,40);
-block8=new Block(420,195,30,40);
 
     
